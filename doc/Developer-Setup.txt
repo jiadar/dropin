@@ -8,22 +8,136 @@ errors, adding platform specific details, or additional detail to help future
 developers.
 
 In writing this document I will be making some architecture decisions throughout, and
-where I do so I will give a brief diatribe on the reasoning for those decisions. 
+where I do so I will give a brief diatribe on the reasoning for those decisions.
 
-1. Editor
+This document will also describe the setup necessary to colloborate with other devs. 
+
+
+*************************************************************************************
+*                                                                                   *
+*                                       Editor                                      *
+*                                                                                   *
+*************************************************************************************
 
 A simple editor is best. We are not writing operating systems or enterprise apps,
 Eclipse is probably overkill. I use emacs with the following:
-* 
 
-https://floobits.com/
+- heavily customized .emacs (see ross-dot-emacs in this directory)
+- eclim, company mode, autocomplete, etc
 
+You can use any of the following editors:
+- emacs
+- sublime
+- intellij
+- atom
+- neovim
 
-1. Database
+Get a proper terminal emulation program as well. (I use iterm2 for mac)
+
+*************************************************************************************
+*                                                                                   *
+*                          Onboarding: Accounts / Services                          *
+*                                                                                   *
+*************************************************************************************
+
+Please make accounts on the following services if you do not already have them: 
+hangouts.google.com
+gmail.com
+drive.google.com
+calendar.google.com
+github.com
+floobits.com
+phacility.com
+aws.amazon.com
+slack.com
+
+Test that you can do the following with another developer:
+- can send messages to other team members on slack
+- can send a text/chat message with google hangout
+- do a google hangout (video/voice) and can share documents
+- see another developer's calendar (free/busy) and can book meetings
+- can see the shared docs in google drive
+- can edit a file colloboratevly with floobits
+- can log in to phabracator
+
+Ask me to add or link your account to those things.
+
+*************************************************************************************
+*                                                                                   *
+*                                     Tech Infra                                    *
+*                                                                                   *
+*************************************************************************************
+
+Github
+------
+Clone our git repo (this may move soon)
+mkdir ~work
+cd ~work
+git clone https://github.com/jiadar/dropin.git
+
+Database
+--------
 
 Architecture Decision: PostgreSQL
 Why: Licensing
 Where: https://www.postgresql.org/download/
 Version: 9.6.2
+Install this on your local machine
+Make an admin account
 
+Try to make some databases and/or mess with the database. See the separate doc
+database-primer.txt for an exercise to try. 
+
+As postgres you can run this to create a user dropin with password dropinnow
+
+psql -Uyouruser postgres
+create role dropin with createdb login password 'dropinnow';
+\q
+
+Web Framework 
+-------------
+
+Architecture Decision: Rails 
+Why: Speed of development 
+Where: gorails.com
+Version: Ruby 2.4.0, Rails 5.0.1
+
+MAC OSX STEPS... (users of other platforms, please fill in your steps) 
+See roughly https://gorails.com/setup/osx/10.12-sierra
+
+Install Homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Install Ruby
+brew install rbenv ruby-build
+echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+source ~/.bash_profile
+rbenv install 2.4.0
+rbenv global 2.4.0
+ruby -v
+
+Install Rails
+gem install rails -v 5.0.1
+rbenv rehash
+rails -v
+
+Connect Web Framework to Database
+---------------------------------
+edit ~/work/dropin/app/config/database.yaml
+to have the parameters set up by your database in that step
+You have to add password, username, port, etc.. 
+see the github config/database.yaml file for my setup
+
+# if you are starting from scratch and not using the git repo
+# rails new app -d postgresql
+
+cd app
+export PGHOST=localhost
+rake db:setup
+rails db:migrate
+rake db:setup
+rails server
+
+Now go to your web browser http://localhost:3000 and you should see the dropin page
+(once we actually make it)
 
