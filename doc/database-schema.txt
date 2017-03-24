@@ -12,3 +12,7 @@ fields: name, date, time, description, teacher, price
 
 transaction: describes information about a transaction, like when a member visits a gym
 fields: gym, class, member, date
+
+waiver: describes what waivers are signed for what members and gyms
+fields: gym, member, date
+
