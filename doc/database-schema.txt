@@ -1,0 +1,14 @@
+The database schema should have the following tables/objects.
+
+member : describes information about a user / member 
+fields: name, address, DOB, email, phone number, date joined, password, username
+
+gym: describes information about a gym
+fields: name, type, address, owner, owner phone number gym phone number, admin, admin
+phone number, date joined
+
+class: classes available at a gym to drop in with drop in price
+fields: name, date, time, description, teacher, price
+
+transaction: describes information about a transaction, like when a member visits a gym
+fields: gym, class, member, date
