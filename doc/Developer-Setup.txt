@@ -1,0 +1,29 @@
+This docuemnt describes the developer setup for working on DropIn. The goal of this
+document is have new developers get up and running with a local development
+environment on the comptuer / platform of their choice, such that the artifacts
+produced can be easily integrated into the production product. 
+
+If you are a developer, please modify this document as necessary whereas correcting
+errors, adding platform specific details, or additional detail to help future
+developers.
+
+In writing this document I will be making some architecture decisions throughout, and
+where I do so I will give a brief diatribe on the reasoning for those decisions. 
+
+1. Editor
+
+A simple editor is best. We are not writing operating systems or enterprise apps,
+Eclipse is probably overkill. I use emacs with the following:
+* 
+
+https://floobits.com/
+
+
+1. Database
+
+Architecture Decision: PostgreSQL
+Why: Licensing
+Where: https://www.postgresql.org/download/
+Version: 9.6.2
+
+

@@ -1,0 +1,74 @@
+Now, for the database stuff
+
+Download Postgres 9.6.2 from https://www.postgresql.org/download/ ... Windows or
+Linux doesn't matter, whatever platform you would prefer to do development. I use
+mac. 
+
+Briefly Review the manual
+https://www.postgresql.org/docs/9.6/static/index.html... specifically the
+tutorial/getting started portion   
+
+Get pgadmin4 working and connected to your database 
+
+Create a new user, set a password for this user
+
+Create a new database named dropin, owned by the user you made in step 4
+
+Now, use the terminal for the following (on linux, xterm or mac iterm) 
+
+
+Use psql to log into your database
+
+Create a new table for members (read the manual to figure out the SQL to do this). It
+should have at least 5 various fields like name, phone number, address, last login,
+or whatever you like. , It should have at least 2 different types of fields. It
+should also have a unique primary key. (read what a primary key is and how to assign
+primary keys)
+
+Our application is a system that lets you drop in to gyms where you are not a member
+of. So we will need a new table of gyms. It should have 5 various fields like name of
+gym, type, cost to drop in, and whatever else you think of. It should also have a
+unique primary key.
+
+Now, the exciting part. You have to have a new table that shows what customers
+dropped into what gyms on what dates. Make a new table dropins that has 2 foreign
+keys, one for members and one for gyms. Add another two fields like date and
+comments. Be sure to use the correct SQL types for all fields.
+
+Next, populate your tables with some test data (add a few dummy customers, gyms, and
+dropins)
+
+Finally, use SQL to make two reports. First report lists all of today's drop ins,
+second report sums the revenue from all the drop ins for today and shows us how much
+money we made!!!
+
+Where you are at right now the above will probably take you about 6-8 hours, but
+please ask me for questions or help if you get stuck for more than 10-15 minutes! I
+will be snowboarding Saturday during the day but can help you otherwise.
+
+Let me see the following when you are done: 
+run from psql prompt and send me the output:
+\dt
+\d members
+\d gyms
+select * from members;
+select * from gyms;
+select * from dropins;
+your two reports along with the SQL used to create them, output should look something like this:
+
+Report #1
+
+  name  |     name      | price
+--------+---------------+-------
+ collin | Serao Academy | 22.75
+ kong   | Serao Academy | 22.75
+ ross   | Kongs Yoga    |    15
+ jack   | FCFC          |    45
+ kong   | FCFC          |    45
+(5 rows)
+
+
+Report #2
+  sum
+-------
+ 150.5
