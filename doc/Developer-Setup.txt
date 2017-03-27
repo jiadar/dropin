@@ -62,6 +62,9 @@ Test that you can do the following with another developer:
 
 Ask me to add or link your account to those things.
 
+Add your info to the DropIn company user info doc in googledocs (should be shared
+with you if I have your email/gmail)
+
 *************************************************************************************
 *                                                                                   *
 *                                     Tech Infra                                    *

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DropIn</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="top">
+        <div class="videowrap">
+          <%= video_tag "http://www.teamengine.org/landing.mp4",
+              :autoplay => true, :loop => true, :muted => true, :preload => true
+          %>
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-lg-offset-9">
+            <%= image_tag "logo.png" %>
+          </div>
+        </div>
+        <div class="row">
+            <h1 class="tag col-lg-12">GYM WHEN &#38; WHERE YOU WANT IT.</h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-lg-offset-4 buttonPosition">
+            <button type="button" name="button" class="signUpButton" id="userSignUpButton">Sign up</button>
+          </div>
+        </div>
+        <div class="row spacerTopDisplay">
+          <div class="col-lg-12">
+            <%= image_tag "spacer.png"%>
+          </div>
+        </div>
+      </div>
+      <div class="middle1">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="section2tag">The Only mobile platform which gives you the Freedom to Gym when and where you want to.</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 middle1Content middle1Content1">
+            <%= image_tag "icons/map.png" %>
+            <h3>Drop In to any Major City</h3>
+            <p>Based on your location, Drop In to the nearest gym tailored to your interests</p>
+          </div>
+          <div class="col-lg-4 middle1Content middle1Content2">
+            <%= image_tag "icons/money.png" %>
+            <h3>Pay as You Go</h3>
+            <p>Pay as you attend classes or sessions.</p>
+          </div>
+          <div class="col-lg-4 middle1Content middle1Content3">
+            <div class="row">
+              <div class="col-md-6">
+                <%= image_tag "icons/boxing.png" %>
+              </div>
+              <div class="col-md-6">
+                <%= image_tag "icons/climb.png" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <%= image_tag "icons/cycle.png" %>
+              </div>
+              <div class="col-md-6">
+                <%= image_tag "icons/karate.png" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <%= image_tag "icons/kettle.png" %>
+              </div>
+              <div class="col-md-6">
+                <%= image_tag "icons/rings.png" %>
+              </div>
+            </div>
+            <h3>Access to Multiple Activities</h3>
+            <p>Access to multiple activities such as Kickboxing, Yoga, CrossFit, Rock Climbing, &#38; more</p>
+          </div>
+        </div>
+      </div>
+      <div class="middle2">
+        <div class="row">
+          <div class="col-lg-12">
+            <%= image_tag "spacer2.png" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 middle2Content">
+            <h4>Map of our locations and activites</h4>
+            <div id="map"></div>
+          </div>
+        </div>
+      <div class="footer">
+        <div class="row">
+          <div class="col-lg-12">
+            <h5>Drop In Partners</h5>
+            <%= image_tag "mblogo.png" %>
+          </div>
+        </div>
+      </div>
+      <div class="contactFormDiv container-fluid">
+        <div class="row">
+          <div class="col-lg-4 col-lg-offset-4">
+            <h2 class="contactH2">Questions?</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-lg-offset-4 contactForm">
+            <form action="https://formspree.io/jacksongrahamricketts@gmail.com" class=""method="POST">
+              <input type="email" name="email" class="email" placeholder="Your email">
+              <br><br>
+              <textarea name="message" class="message" placeholder="Your message"></textarea>
+              <br><br><br>
+              <input type="submit" class="contactButton" value="Send">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="" id="userSignUpModal">
+     <div class="signUpModalContent">
+       <h4>User SIGN UP FORM</h4>
+       <a name="form828840985" id="formAnchor828840985"></a>
+       <!-- <button type="button" name="button" id="userClose" class="close">[x]</button> -->
+     </div>
+    </div>
+    <script type="text/javascript" src="https://fs28.formsite.com/include/form/embedManager.js?828840985"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANnQ43Q-XOiIKao6rWJRP7tbqF7kCBBdE&callback=initMap"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANnQ43Q-XOiIKao6rWJRP7tbqF7kCBBdE"></script> -->
+    <script src="js/javascript.js"></script>
+  </body>
+</html>
+
+
